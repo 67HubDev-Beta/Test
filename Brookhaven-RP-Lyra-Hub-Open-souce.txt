@@ -2673,7 +2673,7 @@ Tab:AddButton({
 Tab:AddButton({
     Name = "Copiar Avatar",
     Callback = function()
-        if not Target then return end
+        if not getgenv().Target then return end
 
         local LP = Players.LocalPlayer
         local LChar = LP.Character
@@ -5541,6 +5541,9 @@ MusicTab:AddDropdown({
     end
 })
 
+-- Thêm dòng này vào trước khi khởi tạo MusicTab hoặc nút bấm
+local NotifyEnabled = true
+
 MusicTab:AddButton({
     Name = "Audio All",
     Callback = function()
@@ -5554,6 +5557,8 @@ MusicTab:AddButton({
             end
             return
         end
+        -- Các đoạn code xử lý âm thanh tiếp theo...
+        
         
         local Players = game:GetService("Players")
         local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -6293,4 +6298,3 @@ MusicTab:AddButton({
             end
         end
     end
-})
